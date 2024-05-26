@@ -1,11 +1,11 @@
 {
     "database_connection": {
         "address": "localhost",
-        "port": 15001,
+        "port": 1500,
         "namespace":"",
         "verify": false,
         "user": "admin",
-        "password": "",
+        "password": "2509",
         "ssl": true
     }
 }

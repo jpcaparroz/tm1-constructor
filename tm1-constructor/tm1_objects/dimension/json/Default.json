@@ -45,7 +45,9 @@
         "Subsets": [
             {
                 "Name": "Metrics_Subset",
-                "MDX": "{[01_Metric].[01_Metric].MEMBERS}"
+                "MDX": "{[01_Metric].[01_Metric].MEMBERS}",
+                "Elements": [],
+                "Alias": ""
             }
         ]
     }
