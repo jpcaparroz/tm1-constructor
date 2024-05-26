@@ -1,0 +1,29 @@
+{
+    "Name": "01_Metric",
+    "UniqueName": "[01_Metric]",
+    "Attributes": {
+        "Caption": "01_Metric"
+    },
+    "Hierarchies": [
+        {
+            "Name": "01_Metric",
+            "Elements": [
+                {
+                    "Name": "value",
+                    "Type": "Numeric"
+                },
+                {
+                    "Name": "total",
+                    "Type": "Consolidated"
+                }
+            ],
+            "Edges": [
+                {
+                    "ParentName": "total",
+                    "ComponentName": "value",
+                    "Weight": 1
+                }
+            ]
+        }
+    ]
+}

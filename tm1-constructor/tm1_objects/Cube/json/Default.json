@@ -1,0 +1,20 @@
+{
+    "Name": "Test",
+    "Rules": null,
+    "Attributes": {
+        "Caption": {
+            "pt": "Teste",
+            "en": "Teste"
+        }
+    },
+    "Dimensions": [
+        "05_Version",
+        "01_Metrics"
+    ],
+    "Views": [
+        {
+            "Name": "Default",
+            "MDX": ""
+        }
+    ]
+}
