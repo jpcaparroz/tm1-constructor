@@ -6,7 +6,7 @@ class SubsetConstructor:
     def __init__(self) -> None:
         pass
     
-    def create_from_dict(dimension_name: str, hierarchy_name:str, subset_dict: dict) -> Subset:
+    def create_from_dict(self, dimension_name: str, hierarchy_name:str, subset_dict: dict) -> Subset:
         """Create an subset object from a dict.
 
         Args:
@@ -27,4 +27,3 @@ class SubsetConstructor:
             )
         
         return subset_object
-        
