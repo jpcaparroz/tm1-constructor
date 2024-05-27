@@ -1,6 +1,6 @@
 {
     "Name": "Test",
-    "Rules": null,
+    "Rules": "",
     "Attributes": {
         "Caption": {
             "pt": "Teste",
@@ -14,7 +14,8 @@
     "Views": [
         {
             "Name": "Default",
-            "MDX": ""
+            "MDX": "",
+            "Default": true
         }
     ]
 }
