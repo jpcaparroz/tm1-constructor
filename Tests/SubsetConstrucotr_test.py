@@ -14,7 +14,7 @@ class TestSubsetConstructor(unittest.TestCase):
         self.dimension_name = 'Test_Dimension'
         self.hierarchy_name = 'Test_Hierarchy'
 
-    def test_create_from_dict_with_mdx(self):
+    def test_create_with_mdx(self):
         subset_model = {
             "Name": "TestSubset",
             "MDX": "SELECT {TM1SUBSETALL([Dimension])} ON ROWS FROM [Cube]",
@@ -23,7 +23,7 @@ class TestSubsetConstructor(unittest.TestCase):
             "Default" : False
         }
         
-        subset = self.constructor.subset.create_from_dict(
+        subset = self.constructor.subset.create(
             dimension_name=self.dimension_name,
             hierarchy_name=self.hierarchy_name,
             subset=subset_model
@@ -36,7 +36,7 @@ class TestSubsetConstructor(unittest.TestCase):
         self.assertFalse(subset.elements)
         self.assertIsNone(subset.alias)
 
-    def test_create_from_dict_without_dimension_name(self):
+    def test_create_without_dimension_name(self):
         subset_model = {
             "Name": "TestSubset",
             "MDX": "SELECT {TM1SUBSETALL([Dimension])} ON ROWS FROM [Cube]",
@@ -45,10 +45,10 @@ class TestSubsetConstructor(unittest.TestCase):
             "Default" : False
         }
         
-        self.assertRaises(TypeError, lambda: self.constructor.subset.create_from_dict(hierarchy_name=self.hierarchy_name, 
+        self.assertRaises(TypeError, lambda: self.constructor.subset.create(hierarchy_name=self.hierarchy_name, 
                                                                                       subset=subset_model))
 
-    def test_create_from_dict_without_hierarchy_name(self):
+    def test_create_without_hierarchy_name(self):
         subset_model = {
             "Name": "TestSubset",
             "MDX": "SELECT {TM1SUBSETALL([Dimension])} ON ROWS FROM [Cube]",
@@ -57,7 +57,7 @@ class TestSubsetConstructor(unittest.TestCase):
             "Default" : False
         }
         
-        self.assertRaises(TypeError, lambda: self.constructor.subset.create_from_dict(dimension_name=self.dimension_name, 
+        self.assertRaises(TypeError, lambda: self.constructor.subset.create(dimension_name=self.dimension_name, 
                                                                                       subset=subset_model))
 
 if __name__ == '__main__':

@@ -9,13 +9,13 @@ class SubsetConstructor:
     def __init__(self) -> None:
         pass
     
-    def create_from_dict(self, dimension_name: str, hierarchy_name:str, subset: Union[SubsetModel, dict]) -> Subset:
-        """Create an subset object from a dict.
+    def create(self, dimension_name: str, hierarchy_name:str, subset: Union[SubsetModel, dict]) -> Subset:
+        """Create an subset object from a expected SubsetModel.
 
         Args:
             dimension_name (str): Dimension name of subset
             hierarchy_name (str): Hierarchy name of subset
-            subset_dict (dict): Subset dict
+            subset (Union[SubsetModel, dict]): A SubsetModel or a dict based on SubsetModel
 
         Returns:
             Subset: A Subset TM1py object.
@@ -34,3 +34,17 @@ class SubsetConstructor:
             )
         
         return subset_object
+    
+    def create_from_list(self, dimension_name: str, hierarchy_name:str, subsets: list[Union[SubsetModel, dict]]) -> list[Subset]:
+        """Create a list of subsets objects from a expected SubsetModel.
+
+        Args:
+            dimension_name (str): Dimension name of subset
+            hierarchy_name (str): Hierarchy name of subset
+            subsets (list[Union[SubsetModel, dict]]): A list of SubsetModel or a dict based on SubsetModel
+
+        Returns:
+            list[Subset]: List of Subset TM1py object.
+        """
+        
+        return [self.create(dimension_name=dimension_name, hierarchy_name=hierarchy_name, subset=subset) for subset in subsets]
