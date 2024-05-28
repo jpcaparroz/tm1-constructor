@@ -1,12 +1,14 @@
 from TM1py import Subset
 
+from TM1Constructor.Model import SubsetModel
+
 class SubsetConstructor:
     """A subset constructor class representation.
     """
     def __init__(self) -> None:
         pass
     
-    def create_from_dict(self, dimension_name: str, hierarchy_name:str, subset_dict: dict) -> Subset:
+    def create_from_dict(self, dimension_name: str, hierarchy_name:str, subset: SubsetModel) -> Subset:
         """Create an subset object from a dict.
 
         Args:
@@ -18,12 +20,12 @@ class SubsetConstructor:
             Subset: A Subset TM1py object.
         """
         subset_object = Subset(
-            subset_name=subset_dict['Name'],
+            subset_name=subset.Name,
             dimension_name=dimension_name,
             hierarchy_name=hierarchy_name,
-            alias=subset_dict['Alias'],
-            expression=subset_dict['MDX'],
-            elements=[element for element in subset_dict['Elements']] if subset_dict['Elements'] is not None else None
+            alias=subset.Alias,
+            expression=subset.MDX,
+            elements=[element for element in subset.Elements] if subset.Elements is not None else None
             )
         
         return subset_object

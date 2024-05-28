@@ -48,7 +48,8 @@
                     "Name": "Metrics_Subset",
                     "MDX": "{[01_Metric].[01_Metric].MEMBERS}",
                     "Elements": ["metric"],
-                    "Alias": ""
+                    "Alias": "",
+                    "Default": true
                 }
             ]
         }
