@@ -5,5 +5,5 @@ class SubsetModel(BaseModel):
     Name: str
     MDX: str
     Elements: Optional[list[str]]
-    Alias: Optional[str]
+    Alias: Optional[str] = None
     Default: bool = False

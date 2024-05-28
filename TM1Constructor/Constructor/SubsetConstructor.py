@@ -1,3 +1,4 @@
+from typing import Union
 from TM1py import Subset
 
 from TM1Constructor.Model import SubsetModel
@@ -8,7 +9,7 @@ class SubsetConstructor:
     def __init__(self) -> None:
         pass
     
-    def create_from_dict(self, dimension_name: str, hierarchy_name:str, subset: SubsetModel) -> Subset:
+    def create_from_dict(self, dimension_name: str, hierarchy_name:str, subset: Union[SubsetModel, dict]) -> Subset:
         """Create an subset object from a dict.
 
         Args:
@@ -19,6 +20,10 @@ class SubsetConstructor:
         Returns:
             Subset: A Subset TM1py object.
         """
+        
+        if not isinstance(subset, SubsetModel):
+            subset = SubsetModel(**subset)
+
         subset_object = Subset(
             subset_name=subset.Name,
             dimension_name=dimension_name,

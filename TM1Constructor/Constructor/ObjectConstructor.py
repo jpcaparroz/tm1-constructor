@@ -1,5 +1,8 @@
-from TM1Constructor.Constructor import DimensionConstructor, SubsetConstructor, CubeConstructor, \
-                                       HierarchyConstructor, ElementConstructor
+from TM1Constructor.Constructor.CubeConstructor import CubeConstructor
+from TM1Constructor.Constructor.DimensionConstructor import DimensionConstructor
+from TM1Constructor.Constructor.HierarchyConstructor import HierarchyConstructor
+from TM1Constructor.Constructor.ElementConstructor import ElementConstructor
+from TM1Constructor.Constructor.SubsetConstructor import SubsetConstructor
 
 class ObjectConstructor:
     
