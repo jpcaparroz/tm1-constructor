@@ -2,6 +2,8 @@ import sys
 import os
 import unittest
 
+from TM1py.Objects import Subset
+
 # Adiciona o diretório raiz do projeto ao sys.path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
@@ -13,6 +15,23 @@ class TestSubsetConstructor(unittest.TestCase):
         self.constructor = ObjectConstructor()
         self.dimension_name = 'Test_Dimension'
         self.hierarchy_name = 'Test_Hierarchy'
+
+    def test_create_happy_case(self):
+        subset_model = {
+            "Name": "TestSubset",
+            "MDX": "SELECT {TM1SUBSETALL([Dimension])} ON ROWS FROM [Cube]",
+            "Elements": None,
+            "Alias": "Caption",
+            "Default" : False
+        }
+        
+        subset = self.constructor.subset.create(
+            dimension_name=self.dimension_name,
+            hierarchy_name=self.hierarchy_name,
+            subset=subset_model
+        )
+        
+        self.assertIsInstance(subset, Subset)
 
     def test_create_with_mdx(self):
         subset_model = {
