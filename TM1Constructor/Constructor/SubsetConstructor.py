@@ -36,7 +36,7 @@ class SubsetConstructor:
         return subset_object
     
     def create_from_list(self, dimension_name: str, hierarchy_name:str, subsets: list[Union[SubsetModel, dict]]) -> list[Subset]:
-        """Create a list of subsets objects from a expected SubsetModel.
+        """Create a list of subset objects from a expected SubsetModel.
 
         Args:
             dimension_name (str): Dimension name of subset
