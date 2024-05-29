@@ -12,9 +12,11 @@ class ElementConstructor:
         """Create an element object from a dict.
 
         Args:
+        -----
             element_dict (dict): Element dict
 
         Returns:
+        --------
             Element: A Element TM1py object.
         """
         if not isinstance(element, ElementModel):
@@ -27,8 +29,16 @@ class ElementConstructor:
         
         return element_object
     
-    def create_from_list(self, element_list: list[ElementModel]) -> list[Element]:
-        elements = []
+    def create_from_list(self, elements: list[Union[ElementModel, dict]]) -> list[Element]:
+        """Create a list of element objects from a expected ElementModel.
+
+        Args:
+        ----
+            elements (list[Union[ElementModel, dict]]): A list of ElementModel or a dict based on ElementModel
+
+        Returns:
+        --------
+            list[Element]: List of Element TM1py object.
+        """
         
-        
-        return elements
+        return [self.create(element=element) for element in elements]
