@@ -13,11 +13,13 @@ class SubsetConstructor:
         """Create an subset object from a expected SubsetModel.
 
         Args:
+        -----
             dimension_name (str): Dimension name of subset
             hierarchy_name (str): Hierarchy name of subset
             subset (Union[SubsetModel, dict]): A SubsetModel or a dict based on SubsetModel
 
         Returns:
+        --------
             Subset: A Subset TM1py object.
         """
         
@@ -39,11 +41,13 @@ class SubsetConstructor:
         """Create a list of subset objects from a expected SubsetModel.
 
         Args:
+        -----
             dimension_name (str): Dimension name of subset
             hierarchy_name (str): Hierarchy name of subset
             subsets (list[Union[SubsetModel, dict]]): A list of SubsetModel or a dict based on SubsetModel
 
         Returns:
+        --------
             list[Subset]: List of Subset TM1py object.
         """
         
