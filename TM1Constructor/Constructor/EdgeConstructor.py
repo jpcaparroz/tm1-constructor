@@ -9,7 +9,7 @@ class EdgeConstructor:
     def __init__(self) -> None:
         pass
 
-    def create(self, edges: List[Union[EdgeModel, dict]]) -> CaseAndSpaceInsensitiveTuplesDict:
+    def create_from_list(self, edges: List[Union[EdgeModel, dict]]) -> CaseAndSpaceInsensitiveTuplesDict:
         treated_edges = []
         for edge in edges:
             if not isinstance(edge, EdgeModel):
