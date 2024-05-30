@@ -52,6 +52,43 @@
                     "Default": true
                 }
             ]
+        },
+        {
+            "Name": "01_Metric1",
+            "Elements": [
+                {
+                    "Name": "value",
+                    "Type": "Numeric",
+                    "Attributes": {
+                        "Caption": {
+                            "pt": "Valor",
+                            "en": "Value"
+                        },
+                        "Format": "\\d"
+                    }
+                },
+                {
+                    "Name": "total",
+                    "Type": "Consolidated",
+                    "Attributes": {}
+                }
+            ],
+            "Edges": [
+                {
+                    "ParentName": "total",
+                    "ComponentName": "value",
+                    "Weight": 1
+                }
+            ],
+            "Subsets": [
+                {
+                    "Name": "Metrics_Subset",
+                    "MDX": "{[01_Metric].[01_Metric].MEMBERS}",
+                    "Elements": ["metric"],
+                    "Alias": "",
+                    "Default": true
+                }
+            ]
         }
     ]
 }
