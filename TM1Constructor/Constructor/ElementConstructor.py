@@ -1,7 +1,7 @@
 from typing import Union
 from TM1py import Element
 
-from TM1Constructor.Model import ElementModel
+from TM1Constructor.Model.ElementModel import ElementModel
 
 class ElementConstructor:
     

@@ -1,7 +1,7 @@
 from typing import Union
 from TM1py import Subset
 
-from TM1Constructor.Model import SubsetModel
+from TM1Constructor.Model.SubsetModel import SubsetModel
 
 class SubsetConstructor:
     """A subset constructor class representation.

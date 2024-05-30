@@ -1,7 +1,7 @@
 from typing import Union
 from TM1py.Utils import CaseAndSpaceInsensitiveTuplesDict
 
-from TM1Constructor.Model import EdgeModel
+from TM1Constructor.Model.EdgeModel import EdgeModel
 
 
 class EdgeConstructor:
