@@ -1,15 +1,17 @@
 from typing import Union
 from TM1py import Hierarchy
 
-#from TM1Constructor.Constructor import ElementConstructor, SubsetConstructor, EdgeConstructor
+from TM1Constructor.Constructor.ElementConstructor import ElementConstructor
+from TM1Constructor.Constructor.EdgeConstructor import EdgeConstructor
+from TM1Constructor.Constructor.SubsetConstructor import SubsetConstructor
 from TM1Constructor.Model import HierarchyModel
 
 class HierarchyConstructor:
     
     def __init__(self) -> None:
-        # self.edge = EdgeConstructor()
-        # self.element = ElementConstructor()
-        # self.subset = SubsetConstructor()
+        self.edge = EdgeConstructor()
+        self.element = ElementConstructor()
+        self.subset = SubsetConstructor()
 
         pass
     
@@ -19,11 +21,14 @@ class HierarchyConstructor:
             hierarchy = HierarchyModel(**hierarchy)
         
         hierarchy_object = Hierarchy(
-            name=hierarchy['Name'],
+            name=hierarchy.Name,
             dimension_name=dimension_name,
-            #elements=self.element.create_from_list(hierarchy.Elements),
-            #edges=self.edge.create_from_list(hierarchy.Edges),
-            #subsets=,
+            elements=self.element.create_from_list(hierarchy.Elements),
+            edges=self.edge.create(hierarchy.Edges),
+            subsets=self.subset.create_from_list(
+                dimension_name=dimension_name,
+                hierarchy_name=hierarchy.Name,
+                subsets=hierarchy.Subsets),
         )
         
-        return ''
+        return hierarchy_object

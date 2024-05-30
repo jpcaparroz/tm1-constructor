@@ -7,12 +7,12 @@ from TM1py.Objects import Element
 # Adiciona o diretório raiz do projeto ao sys.path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from TM1Constructor.Constructor import ObjectConstructor
+from TM1Constructor.Constructor.ElementConstructor import ElementConstructor
 
 class TestElementConstructor(unittest.TestCase):
     
     def setUp(self):
-        self.constructor = ObjectConstructor()
+        self.constructor = ElementConstructor()
 
     def test_create_happy_case(self):
         element_model = {
@@ -20,7 +20,7 @@ class TestElementConstructor(unittest.TestCase):
             "Type": "NUMERIC"
         }
         
-        element = self.constructor.element.create(
+        element = self.constructor.create(
             element=element_model
         )
         
@@ -35,7 +35,7 @@ class TestElementConstructor(unittest.TestCase):
             {"Name": "Element_Test_3", "Type": "CONSOLIDATED"}
         ]
         
-        elements = self.constructor.element.create_from_list(
+        elements = self.constructor.create_from_list(
             elements=element_models
         )
 

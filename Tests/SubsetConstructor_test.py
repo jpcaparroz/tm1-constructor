@@ -7,12 +7,12 @@ from TM1py.Objects import Subset
 # Adiciona o diretório raiz do projeto ao sys.path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from TM1Constructor.Constructor import ObjectConstructor
+from TM1Constructor.Constructor.SubsetConstructor import SubsetConstructor
 
 class TestSubsetConstructor(unittest.TestCase):
     
     def setUp(self):
-        self.constructor = ObjectConstructor()
+        self.constructor = SubsetConstructor()
         self.dimension_name = 'Test_Dimension'
         self.hierarchy_name = 'Test_Hierarchy'
 
@@ -25,7 +25,7 @@ class TestSubsetConstructor(unittest.TestCase):
             "Default" : False
         }
         
-        subset = self.constructor.subset.create(
+        subset = self.constructor.create(
             dimension_name=self.dimension_name,
             hierarchy_name=self.hierarchy_name,
             subset=subset_model
@@ -42,7 +42,7 @@ class TestSubsetConstructor(unittest.TestCase):
             "Default" : False
         }
         
-        subset = self.constructor.subset.create(
+        subset = self.constructor.create(
             dimension_name=self.dimension_name,
             hierarchy_name=self.hierarchy_name,
             subset=subset_model
@@ -64,7 +64,7 @@ class TestSubsetConstructor(unittest.TestCase):
             "Default" : False
         }
         
-        self.assertRaises(TypeError, lambda: self.constructor.subset.create(hierarchy_name=self.hierarchy_name, 
+        self.assertRaises(TypeError, lambda: self.constructor.create(hierarchy_name=self.hierarchy_name, 
                                                                                       subset=subset_model))
 
     def test_create_without_hierarchy_name(self):
@@ -76,7 +76,7 @@ class TestSubsetConstructor(unittest.TestCase):
             "Default" : False
         }
         
-        self.assertRaises(TypeError, lambda: self.constructor.subset.create(dimension_name=self.dimension_name, 
+        self.assertRaises(TypeError, lambda: self.constructor.create(dimension_name=self.dimension_name, 
                                                                                       subset=subset_model))
 
 if __name__ == '__main__':
