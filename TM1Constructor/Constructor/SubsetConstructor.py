@@ -1,4 +1,4 @@
-from typing import Union
+from typing import Union, List
 from TM1py import Subset
 
 from TM1Constructor.Model.SubsetModel import SubsetModel
@@ -37,18 +37,18 @@ class SubsetConstructor:
         
         return subset_object
     
-    def create_from_list(self, dimension_name: str, hierarchy_name:str, subsets: list[Union[SubsetModel, dict]]) -> list[Subset]:
+    def create_from_list(self, dimension_name: str, hierarchy_name:str, subsets: List[Union[SubsetModel, dict]]) -> List[Subset]:
         """Create a list of subset objects from a expected SubsetModel.
 
         Args:
         -----
             dimension_name (str): Dimension name of subset
             hierarchy_name (str): Hierarchy name of subset
-            subsets (list[Union[SubsetModel, dict]]): A list of SubsetModel or a dict based on SubsetModel
+            subsets (List[Union[SubsetModel, dict]]): A list of SubsetModel or a dict based on SubsetModel
 
         Returns:
         --------
-            list[Subset]: List of Subset TM1py object.
+            List[Subset]: List of Subset TM1py object.
         """
         
         return [self.create(dimension_name=dimension_name, hierarchy_name=hierarchy_name, subset=subset) for subset in subsets]

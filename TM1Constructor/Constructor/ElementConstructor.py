@@ -1,4 +1,4 @@
-from typing import Union
+from typing import Union, List
 from TM1py import Element
 
 from TM1Constructor.Model.ElementModel import ElementModel
@@ -29,16 +29,16 @@ class ElementConstructor:
         
         return element_object
     
-    def create_from_list(self, elements: list[Union[ElementModel, dict]]) -> list[Element]:
-        """Create a list of element objects from a expected ElementModel.
+    def create_from_List(self, elements: List[Union[ElementModel, dict]]) -> List[Element]:
+        """Create a List of element objects from a expected ElementModel.
 
         Args:
         ----
-            elements (list[Union[ElementModel, dict]]): A list of ElementModel or a dict based on ElementModel
+            elements (List[Union[ElementModel, dict]]): A List of ElementModel or a dict based on ElementModel
 
         Returns:
         --------
-            list[Element]: List of Element TM1py object.
+            List[Element]: List of Element TM1py object.
         """
         
         return [self.create(element=element) for element in elements]

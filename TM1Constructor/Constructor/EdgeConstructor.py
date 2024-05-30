@@ -1,4 +1,4 @@
-from typing import Union
+from typing import Union, List
 from TM1py.Utils import CaseAndSpaceInsensitiveTuplesDict
 
 from TM1Constructor.Model.EdgeModel import EdgeModel
@@ -9,7 +9,7 @@ class EdgeConstructor:
     def __init__(self) -> None:
         pass
 
-    def create(self, edges: list[Union[EdgeModel, dict]]) -> CaseAndSpaceInsensitiveTuplesDict:
+    def create(self, edges: List[Union[EdgeModel, dict]]) -> CaseAndSpaceInsensitiveTuplesDict:
         treated_edges = []
         for edge in edges:
             if not isinstance(edge, EdgeModel):
