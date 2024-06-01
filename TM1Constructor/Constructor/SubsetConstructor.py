@@ -22,9 +22,7 @@ class SubsetConstructor:
         --------
             Subset: A Subset TM1py object.
         """
-        
-        if not isinstance(subset, SubsetModel):
-            subset = SubsetModel(**subset)
+        subset = self.__change_istance_if_dict(subset=subset)
 
         subset_object = Subset(
             subset_name=subset.Name,
@@ -52,3 +50,12 @@ class SubsetConstructor:
         """
         
         return [self.create(dimension_name=dimension_name, hierarchy_name=hierarchy_name, subset=subset) for subset in subsets]
+    
+    def __check_instance(self, subset: Union[SubsetModel, dict]) -> bool:
+        return isinstance(subset, SubsetModel)
+    
+    def __change_istance_if_dict(self, subset: Union[SubsetModel, dict]) -> SubsetModel:
+        if self.__check_instance(subset):
+            return subset
+        else:
+            return SubsetModel(**subset)

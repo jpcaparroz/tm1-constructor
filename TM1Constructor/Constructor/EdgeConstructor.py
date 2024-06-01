@@ -20,8 +20,7 @@ class EdgeConstructor:
         --------
             CaseAndSpaceInsensitiveTuplesDict: A CaseAndSpaceInsensitiveTuplesDict TM1py object.
         """
-        if not isinstance(edge, EdgeModel):
-            edge = EdgeModel(**edge)
+        edge = self.__change_istance_if_dict(edge=edge)
 
 
         edge_object = CaseAndSpaceInsensitiveTuplesDict(
@@ -48,3 +47,12 @@ class EdgeConstructor:
             edge_objects.update(self.create(edge))
             
         return edge_objects
+
+    def __check_instance(self, edge: Union[EdgeModel, dict]) -> bool:
+        return isinstance(edge, EdgeModel)
+    
+    def __change_istance_if_dict(self, edge: Union[EdgeModel, dict]) -> EdgeModel:
+        if self.__check_instance(edge):
+            return edge
+        else:
+            return EdgeModel(**edge)

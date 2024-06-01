@@ -13,14 +13,13 @@ class ElementConstructor:
 
         Args:
         -----
-            element_dict (dict): Element dict
+            element (Union[ElementModel, dict]): A ElementModel or a dict based on ElementModel
 
         Returns:
         --------
             Element: A Element TM1py object.
         """
-        if not isinstance(element, ElementModel):
-            element = ElementModel(**element)
+        element = self.__change_istance_if_dict(element=element)
         
         element_object = Element(
             name=element.Name,
@@ -42,3 +41,12 @@ class ElementConstructor:
         """
         
         return [self.create(element=element) for element in elements]
+    
+    def __check_instance(self, element: Union[ElementModel, dict]) -> bool:
+        return isinstance(element, ElementModel)
+    
+    def __change_istance_if_dict(self, element: Union[ElementModel, dict]) -> ElementModel:
+        if self.__check_instance(element):
+            return element
+        else:
+            return ElementModel(**element)

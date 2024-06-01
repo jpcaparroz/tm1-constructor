@@ -27,8 +27,7 @@ class HierarchyConstructor:
         --------
             Hierarchy: A Hierarchy TM1py object.
         """
-        if not isinstance(hierarchy, HierarchyModel):
-            hierarchy = HierarchyModel(**hierarchy)
+        hierarchy = self.__change_istance_if_dict(hierarchy=hierarchy)
         
         hierarchy_object = Hierarchy(
             name=hierarchy.Name,
@@ -57,3 +56,12 @@ class HierarchyConstructor:
         """
         
         return [self.create(dimension_name=dimension_name, hierarchy=hierarchy) for hierarchy in hierarchies]
+    
+    def __check_instance(self, hierarchy: Union[HierarchyModel, dict]) -> bool:
+        return isinstance(hierarchy, HierarchyModel)
+    
+    def __change_istance_if_dict(self, hierarchy: Union[HierarchyModel, dict]) -> HierarchyModel:
+        if self.__check_instance(hierarchy):
+            return hierarchy
+        else:
+            return HierarchyModel(**hierarchy)

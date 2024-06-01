@@ -42,7 +42,7 @@ class ElementAttributeConstructor:
         
         return [self.create(element_attribute=element_attribute) for element_attribute in element_attributes]
 
-    def __check_instance(element_attribute: Union[ElementAttributeModel, dict]) -> bool:
+    def __check_instance(self, element_attribute: Union[ElementAttributeModel, dict]) -> bool:
         return isinstance(element_attribute, ElementAttributeModel)
     
     def __change_istance_if_dict(self, element_attribute: Union[ElementAttributeModel, dict]) -> ElementAttributeModel:
