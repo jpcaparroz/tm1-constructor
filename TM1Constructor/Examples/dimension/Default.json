@@ -12,6 +12,10 @@
         {
             "Name": "Format",
             "Type": "String"
+        },
+        {
+            "Name": "Active",
+            "Type": "Numeric"
         }
     ],
     "Hierarchies": [
