@@ -51,13 +51,16 @@ class DimensionConstructor:
         
         return [self.create(dimension=dimension) for dimension in dimensions]
     
-    def create_attributes(self, tm1_service: TM1Service, dimension: Union[DimensionModel, dict]):
+    def create_attributes(self, tm1_service: TM1Service, dimension: Union[DimensionModel, dict]) -> None:
         dimension = self.__change_istance_if_dict(dimension=dimension)
         
         for element_attribute in dimension.Attributes:
-            return tm1_service.elements.create_element_attribute(dimension_name=dimension.Name, 
+            try:
+                tm1_service.elements.create_element_attribute(dimension_name=dimension.Name, 
                                                                  hierarchy_name=dimension.Name, 
                                                                  element_attribute=self.element_attribute.create(element_attribute=element_attribute))
+            except:
+                raise ValueError
              
     def __check_instance(self, dimension: Union[DimensionModel, dict]) -> bool:
         return isinstance(dimension, DimensionModel)
