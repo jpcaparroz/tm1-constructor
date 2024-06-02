@@ -1,3 +1,5 @@
+from TM1Constructor.Model.CubeModel import CubeModel
+from TM1Constructor.Model.ViewModel import ViewModel
 from TM1Constructor.Model.DimensionModel import DimensionModel
 from TM1Constructor.Model.HierarchyModel import HierarchyModel
 from TM1Constructor.Model.EdgeModel import EdgeModel
