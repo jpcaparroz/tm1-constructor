@@ -36,7 +36,7 @@ class EdgeConstructor:
 
         Args:
         -----
-            edges (List[Union[HierarchyModel, dict]]): A list of EdgeModel or a dict based on EdgeModel
+            edges (List[Union[EdgeModel, dict]]): A list of EdgeModel or a dict based on EdgeModel
 
         Returns:
         --------
