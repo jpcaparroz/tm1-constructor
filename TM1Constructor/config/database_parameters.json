@@ -1,7 +1,7 @@
 {
     "database_connection": {
         "address": "localhost",
-        "port": 1500,
+        "port": 15000,
         "namespace":"",
         "verify": false,
         "user": "admin",
