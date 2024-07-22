@@ -7,8 +7,8 @@ from TM1py.Utils import CaseAndSpaceInsensitiveTuplesDict
 # Adiciona o diretório raiz do projeto ao sys.path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from TM1Constructor.Constructor.EdgeConstructor import EdgeConstructor
-from TM1Constructor.Model.EdgeModel import EdgeModel
+from TM1Constructor.constructor.EdgeConstructor import EdgeConstructor
+from TM1Constructor.model.EdgeModel import EdgeModel
 
 class TestEdgeConstructor(unittest.TestCase):
     

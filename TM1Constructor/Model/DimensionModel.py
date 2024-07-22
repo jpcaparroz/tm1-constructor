@@ -1,9 +1,10 @@
 from pydantic import BaseModel
 from typing import List
 
-from TM1Constructor.Model.HierarchyModel import HierarchyModel
-from TM1Constructor.Model.ElementAttributeModel import ElementAttributeModel
-from TM1Constructor.Model.CaptionModel import CaptionModel
+from TM1Constructor.model.HierarchyModel import HierarchyModel
+from TM1Constructor.model.ElementAttributeModel import ElementAttributeModel
+from TM1Constructor.model.CaptionModel import CaptionModel
+
 
 class DimensionModel(BaseModel):
     Name: str

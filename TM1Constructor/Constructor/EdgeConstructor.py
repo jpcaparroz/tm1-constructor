@@ -1,13 +1,18 @@
-from typing import Union, List
+from typing import Union
+from typing import List
+
 from TM1py.Utils import CaseAndSpaceInsensitiveTuplesDict
 
-from TM1Constructor.Model.EdgeModel import EdgeModel
+from TM1Constructor.model.EdgeModel import EdgeModel
 
 
 class EdgeConstructor:
+    """A edge constructor class representation.
+    """
 
     def __init__(self) -> None:
         pass
+
 
     def create(self, edge: Union[EdgeModel, dict]) -> CaseAndSpaceInsensitiveTuplesDict:
         """Create an CaseAndSpaceInsensitiveTuplesDict object from a expected EdgeModel.
@@ -31,6 +36,7 @@ class EdgeConstructor:
 
         return edge_object
 
+
     def create_from_list(self, edges: List[Union[EdgeModel, dict]]) -> CaseAndSpaceInsensitiveTuplesDict:
         """Create a CaseAndSpaceInsensitiveTuplesDict objects from a expected EdgeModel.
 
@@ -48,9 +54,11 @@ class EdgeConstructor:
             
         return edge_objects
 
+
     def __check_instance(self, edge: Union[EdgeModel, dict]) -> bool:
         return isinstance(edge, EdgeModel)
-    
+
+
     def __change_istance_if_dict(self, edge: Union[EdgeModel, dict]) -> EdgeModel:
         if self.__check_instance(edge):
             return edge

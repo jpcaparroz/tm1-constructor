@@ -1,13 +1,19 @@
-from typing import Union, List
+from typing import Union
+from typing import List
+
 from TM1py import Element
 
-from TM1Constructor.Model.ElementModel import ElementModel
+from TM1Constructor.model.ElementModel import ElementModel
+
 
 class ElementConstructor:
+    """A element constructor class representation.
+    """
     
     def __init__(self) -> None:
         pass
-    
+
+
     def create(self, element: Union[ElementModel, dict]) -> Element:
         """Create an element object from a dict.
 
@@ -25,9 +31,10 @@ class ElementConstructor:
             name=element.Name,
             element_type=element.Type
         )
-        
+
         return element_object
-    
+
+
     def create_from_list(self, elements: List[Union[ElementModel, dict]]) -> List[Element]:
         """Create a list of element objects from a expected ElementModel.
 
@@ -39,12 +46,14 @@ class ElementConstructor:
         --------
             List[Element]: List of Element TM1py object.
         """
-        
+
         return [self.create(element=element) for element in elements]
-    
+
+
     def __check_instance(self, element: Union[ElementModel, dict]) -> bool:
         return isinstance(element, ElementModel)
-    
+
+
     def __change_istance_if_dict(self, element: Union[ElementModel, dict]) -> ElementModel:
         if self.__check_instance(element):
             return element

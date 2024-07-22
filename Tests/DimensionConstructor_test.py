@@ -7,8 +7,8 @@ from TM1py.Utils import CaseAndSpaceInsensitiveTuplesDict
 # Adiciona o diretório raiz do projeto ao sys.path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from TM1Constructor.Constructor.DimensionConstructor import DimensionConstructor
-from TM1Constructor.Model.DimensionModel import DimensionModel
+from TM1Constructor.constructor.DimensionConstructor import DimensionConstructor
+from TM1Constructor.model.DimensionModel import DimensionModel
 
 class TestDimensionConstructor(unittest.TestCase):
     

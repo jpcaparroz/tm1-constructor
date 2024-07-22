@@ -1,9 +1,10 @@
 from pydantic import BaseModel
 from typing import List
 
-from TM1Constructor.Model.ElementModel import ElementModel
-from TM1Constructor.Model.EdgeModel import EdgeModel
-from TM1Constructor.Model.SubsetModel import SubsetModel
+from TM1Constructor.model.ElementModel import ElementModel
+from TM1Constructor.model.EdgeModel import EdgeModel
+from TM1Constructor.model.SubsetModel import SubsetModel
+
 
 class HierarchyModel(BaseModel):
     Name: str

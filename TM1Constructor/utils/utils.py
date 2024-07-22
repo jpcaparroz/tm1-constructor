@@ -1,13 +1,17 @@
 import json
-import sys, os
+import sys
+import os
+
 
 CONFIG_PATH = r'\..\config\database_parameters.json'
+
 
 def getConnection():
     with open(set_current_directory() + CONFIG_PATH) as op:
         config = json.load(op)
     connection = config['database_connection']
     return connection
+
 
 def set_current_directory():
     # determine if application is a script file or frozen exe
@@ -19,5 +23,3 @@ def set_current_directory():
     # set current directory
     os.chdir(directory)
     return directory
-
-

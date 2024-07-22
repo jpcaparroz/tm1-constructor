@@ -1,14 +1,19 @@
-from typing import Union, List
+from typing import Union
+from typing import List
+
 from TM1py import Subset
 
-from TM1Constructor.Model.SubsetModel import SubsetModel
+from TM1Constructor.model.SubsetModel import SubsetModel
+
 
 class SubsetConstructor:
     """A subset constructor class representation.
     """
+
     def __init__(self) -> None:
         pass
-    
+
+
     def create(self, dimension_name: str, hierarchy_name:str, subset: Union[SubsetModel, dict]) -> Subset:
         """Create an subset object from a expected SubsetModel.
 
@@ -34,7 +39,8 @@ class SubsetConstructor:
             )
         
         return subset_object
-    
+
+
     def create_from_list(self, dimension_name: str, hierarchy_name:str, subsets: List[Union[SubsetModel, dict]]) -> List[Subset]:
         """Create a list of subset objects from a expected SubsetModel.
 
@@ -48,12 +54,14 @@ class SubsetConstructor:
         --------
             List[Subset]: List of Subset TM1py object.
         """
-        
+
         return [self.create(dimension_name=dimension_name, hierarchy_name=hierarchy_name, subset=subset) for subset in subsets]
-    
+
+
     def __check_instance(self, subset: Union[SubsetModel, dict]) -> bool:
         return isinstance(subset, SubsetModel)
-    
+
+
     def __change_istance_if_dict(self, subset: Union[SubsetModel, dict]) -> SubsetModel:
         if self.__check_instance(subset):
             return subset

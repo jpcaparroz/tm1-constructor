@@ -7,7 +7,7 @@ from TM1py.Objects import Subset
 # Adiciona o diretório raiz do projeto ao sys.path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from TM1Constructor.Constructor.SubsetConstructor import SubsetConstructor
+from TM1Constructor.constructor.SubsetConstructor import SubsetConstructor
 
 class TestSubsetConstructor(unittest.TestCase):
     
