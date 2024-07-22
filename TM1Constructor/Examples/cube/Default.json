@@ -1,16 +1,16 @@
 {
-    "Name": "Test",
-    "Rules": "",
-    "Attributes": {
-        "Caption": {
-            "pt": "Teste",
-            "en": "Teste"
-        }
+    "Name": "Values",
+    "Caption": {
+        "pt": "Valores",
+        "en": "Values"
     },
+    "Attributes": [
+    ],
     "Dimensions": [
         "05_Version",
         "01_Metrics"
     ],
+    "Rules": "#TEST",
     "Views": [
         {
             "Name": "Default",

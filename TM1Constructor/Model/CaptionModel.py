@@ -1,7 +1,11 @@
 from pydantic import BaseModel
-from typing import Dict
+from pydantic import ConfigDict
 
 
 class CaptionModel(BaseModel):
-    translations: Dict[str, str]
+    
+    model_config = ConfigDict(extra='allow')
+    
+    pt: str
+    en: str
     
