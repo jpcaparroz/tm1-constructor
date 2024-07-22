@@ -36,7 +36,7 @@ class DimensionConstructor:
         --------
             Dimension: A Dimension TM1py object.
         """
-        dimension = self.__change_istance_if_dict(dimension=dimension)
+        dimension: DimensionModel = self.__change_istance_if_dict(dimension)
         
         dimension_object = Dimension(
             name=dimension.Name,
@@ -62,7 +62,7 @@ class DimensionConstructor:
 
 
     def create_attributes(self, tm1_service: TM1Service, dimension: Union[DimensionModel, dict]) -> None:
-        dimension = self.__change_istance_if_dict(dimension=dimension)
+        dimension: DimensionModel = self.__change_istance_if_dict(dimension)
         
         for element_attribute in dimension.Attributes:
             try:

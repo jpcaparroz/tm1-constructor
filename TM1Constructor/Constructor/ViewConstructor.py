@@ -25,7 +25,7 @@ class ViewConstructor:
         --------
             MDXView: A MDXView TM1py object.
         """
-        view = self.__change_istance_if_dict(view=view)
+        view: ViewModel = self.__change_istance_if_dict(view)
 
         view_object = MDXView(
             cube_name=cube_name,

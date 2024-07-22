@@ -33,7 +33,7 @@ class HierarchyConstructor:
         --------
             Hierarchy: A Hierarchy TM1py object.
         """
-        hierarchy = self.__change_istance_if_dict(hierarchy=hierarchy)
+        hierarchy: HierarchyModel = self.__change_istance_if_dict(hierarchy)
         
         hierarchy_object = Hierarchy(
             name=hierarchy.Name,

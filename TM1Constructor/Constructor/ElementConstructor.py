@@ -25,7 +25,7 @@ class ElementConstructor:
         --------
             Element: A Element TM1py object.
         """
-        element = self.__change_istance_if_dict(element=element)
+        element: ElementModel = self.__change_istance_if_dict(element)
         
         element_object = Element(
             name=element.Name,

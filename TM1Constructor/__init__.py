@@ -1,3 +1,3 @@
-from TM1Constructor.Constructor import *
+from TM1Constructor.constructor import *
 
-from TM1Constructor.Utils import Utils
+from TM1Constructor.utils import *

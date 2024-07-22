@@ -27,7 +27,7 @@ class SubsetConstructor:
         --------
             Subset: A Subset TM1py object.
         """
-        subset = self.__change_istance_if_dict(subset=subset)
+        subset: SubsetModel = self.__change_istance_if_dict(subset)
 
         subset_object = Subset(
             subset_name=subset.Name,

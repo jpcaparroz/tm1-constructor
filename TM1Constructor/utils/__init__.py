@@ -1,1 +1,1 @@
-from TM1Constructor.Utils import Utils
+from TM1Constructor.utils import utils

@@ -25,7 +25,7 @@ class EdgeConstructor:
         --------
             CaseAndSpaceInsensitiveTuplesDict: A CaseAndSpaceInsensitiveTuplesDict TM1py object.
         """
-        edge = self.__change_istance_if_dict(edge=edge)
+        edge: EdgeModel = self.__change_istance_if_dict(edge)
 
 
         edge_object = CaseAndSpaceInsensitiveTuplesDict(

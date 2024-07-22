@@ -25,7 +25,7 @@ class ElementAttributeConstructor:
         --------
             ElementAttribute: A ElementAttribute TM1py object.
         """
-        element_attribute = self.__change_istance_if_dict(element_attribute=element_attribute)
+        element_attribute: ElementAttributeModel = self.__change_istance_if_dict(element_attribute)
         
         element_attribute_object = ElementAttribute(
             name=element_attribute.Name,
