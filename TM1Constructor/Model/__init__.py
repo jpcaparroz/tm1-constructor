@@ -7,3 +7,4 @@ from TM1Constructor.model.ElementModel import ElementModel
 from TM1Constructor.model.ElementAttributeModel import ElementAttributeModel
 from TM1Constructor.model.CaptionModel import CaptionModel
 from TM1Constructor.model.SubsetModel import SubsetModel
+from TM1Constructor.model.ObjectModel import ObjectModel
