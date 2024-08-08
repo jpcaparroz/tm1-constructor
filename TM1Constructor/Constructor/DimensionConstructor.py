@@ -40,7 +40,7 @@ class DimensionConstructor:
         
         dimension_object = Dimension(
             name=dimension.Name,
-            hierarchies=self.hierarchy.create_from_list(dimension_name=dimension.Name, hierarchies=dimension.Hierarchies)
+            hierarchies=self.hierarchy.create_from_list(dimension.Name, dimension.Hierarchies)
         )
 
         return dimension_object
@@ -67,8 +67,8 @@ class DimensionConstructor:
         for element_attribute in dimension.Attributes:
             try:
                 tm1_service.elements.create_element_attribute(dimension_name=dimension.Name, 
-                                                                 hierarchy_name=dimension.Name, 
-                                                                 element_attribute=self.element_attribute.create(element_attribute=element_attribute))
+                                                              hierarchy_name=dimension.Name, 
+                                                              element_attribute=self.element_attribute.create(element_attribute))
             except:
                 raise ValueError
 
